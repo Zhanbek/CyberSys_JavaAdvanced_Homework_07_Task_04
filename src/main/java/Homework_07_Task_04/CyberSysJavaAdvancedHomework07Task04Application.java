@@ -3,6 +3,7 @@ package Homework_07_Task_04;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 import model.Cities;
 import model.City;
 import model.House;
@@ -49,6 +50,7 @@ public class CyberSysJavaAdvancedHomework07Task04Application {
         // Спочатку зберігаємо в файл
         marshaller.marshal(cities, new File(FILE_PATH));
 
+
         // Трансформуємо XML в потрібний формат
         System.out.println("Трансформуємо XML в потрібний формат...");
         transformXML(FILE_PATH, TRANSFORMED_PATH, XSLT_PATH);
@@ -59,6 +61,14 @@ public class CyberSysJavaAdvancedHomework07Task04Application {
         printFile(TRANSFORMED_PATH);
         System.out.println("----------------------------");
         System.out.println("Трансформований XML збережено в: " + TRANSFORMED_PATH);
+
+        System.out.println();
+        System.out.println("Виконуємо unmarshalling з файлу: " + FILE_PATH);
+        System.out.println("----------------------------");
+        Unmarshaller jaxbUnmarshaller = context.createUnmarshaller();
+        Cities citiesUnmarshalled = (Cities) jaxbUnmarshaller.unmarshal(new File(FILE_PATH));
+        System.out.println(citiesUnmarshalled);
+        System.out.println("----------------------------");
     }
 
     private static void transformXML(String inputPath, String outputPath, String xsltPath)
