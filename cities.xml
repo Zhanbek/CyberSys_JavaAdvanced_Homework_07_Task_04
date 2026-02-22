@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cities>
+    <city>
+        <name>Київ</name>
+        <size>великий</size>
+        <street>
+            <name>Хрещатик</name>
+            <house>
+                <number>1</number>
+                <floors>5</floors>
+            </house>
+            <house>
+                <number>2</number>
+                <floors>4</floors>
+            </house>
+        </street>
+        <street>
+            <name>Андріївський узві</name>
+            <house>
+                <number>10</number>
+                <floors>3</floors>
+            </house>
+            <house>
+                <number>12</number>
+                <floors>2</floors>
+            </house>
+        </street>
+    </city>
+    <city>
+        <name>Львів</name>
+        <size>середник</size>
+        <street>
+            <name>Площа Ринок</name>
+            <house>
+                <number>5</number>
+                <floors>4</floors>
+            </house>
+            <house>
+                <number>6</number>
+                <floors>4</floors>
+            </house>
+        </street>
+        <street>
+            <name>Проспект Шевченка</name>
+            <house>
+                <number>15</number>
+                <floors>6</floors>
+            </house>
+            <house>
+                <number>17</number>
+                <floors>5</floors>
+            </house>
+        </street>
+    </city>
+</cities>
