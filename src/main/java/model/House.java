@@ -7,7 +7,6 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 public class House {
 
     private int number;
-
     private int floors;
 
     public House() {}
@@ -17,9 +16,12 @@ public class House {
         this.floors = floors;
     }
 
+    public int getNumber() { return number; }
+    public int getFloors() { return floors; }
+
     @Override
     public String toString() {
-        return "House{" +
+        return "House {" +
                 "floors=" + floors +
                 ", number=" + number +
                 '}';

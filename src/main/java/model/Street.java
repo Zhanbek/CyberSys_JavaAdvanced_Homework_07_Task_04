@@ -1,9 +1,6 @@
 package model;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-
+import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +8,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Street {
 
+    @XmlElement(name = "name")
     private String name;
 
     @XmlElement(name = "house")
@@ -26,11 +24,15 @@ public class Street {
         houses.add(house);
     }
 
+    public String getName() { return name; }
+    public List<House> getHouses() { return houses; }
+
     @Override
     public String toString() {
-        return "Street{" +
-                "houses=" + Arrays.deepToString(houses.toArray()) +
-                ", name='" + name + '\'' +
+        return "Street {" +
+                "name='" + name + '\'' +
+                ", houses=" + Arrays.deepToString(houses.toArray()) +
+
                 '}';
     }
 }
