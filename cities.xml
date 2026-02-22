@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <cities>
-    <city>
+    <city size="великий">
         <name>Київ</name>
-        <size>великий</size>
         <street>
             <name>Хрещатик</name>
             <house>
@@ -26,9 +25,8 @@
             </house>
         </street>
     </city>
-    <city>
+    <city size="середник">
         <name>Львів</name>
-        <size>середник</size>
         <street>
             <name>Площа Ринок</name>
             <house>

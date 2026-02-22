@@ -10,6 +10,7 @@ import model.Street;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +21,23 @@ import java.io.File;
 @SpringBootApplication
 public class CyberSysJavaAdvancedHomework07Task04Application {
 
+    private static final String  FILE_PATH = "cities.xml";
+
     public static void main(String[] args) throws JAXBException {
         SpringApplication.run(CyberSysJavaAdvancedHomework07Task04Application.class, args);
 
         System.out.println();
-        System.out.println("CyberSysJavaAdvancedHomework07Task04Application started");
+        System.out.println("Запущено додаток для домашнього завдання Homework07_Task04");
         System.out.println();
 
         // Створюємо масив міст
         Cities cities = createCitiesAndLoadData();
-        System.out.println("Cities: " + cities);
+
+        System.out.println("Об'єкт cities заповнений даними міст");
+        System.out.println("----------------------------");
+        System.out.println(cities);
+        System.out.println("----------------------------");
+        System.out.println();
 
         JAXBContext context = JAXBContext.newInstance(Cities.class);
 
@@ -37,9 +45,17 @@ public class CyberSysJavaAdvancedHomework07Task04Application {
 
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        marshaller.marshal(cities, new File("cities.xml"));
+        System.out.println("Виконаємо збереження даних об'єкта cities в XML файлі " + FILE_PATH);
+        System.out.println();
 
-        System.out.println("XML created successfully!");
+        marshaller.marshal(cities, new File(FILE_PATH));
+
+        System.out.println("----------------------------");
+        marshaller.marshal(cities, System.out);
+        System.out.println("----------------------------");
+        System.out.println();
+
+
     }
 
     private static Cities createCitiesAndLoadData() {

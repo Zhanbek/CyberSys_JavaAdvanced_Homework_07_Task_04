@@ -2,6 +2,7 @@ package model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 
 import java.util.ArrayList;
@@ -10,9 +11,9 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class City {
-
     private String name;
 
+    @XmlAttribute
     private String size;
 
     @XmlElement(name = "street")
